@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <style>
+      table, th, td {
+         border: 0.9px solid black;
+         width: 30%;
+      }
+      body {background-image: url('/static/chalkboard.jpg');;
+            background-size: 100% 370%;
+            background-repeat: no-repeat;
+            background-color: rgba(255, 255, 255, 0.65);
+            }
+      h1 { 
+            border:5px double black;
+            background-color: white;
+            color: red;
+            font-size: 290%;
+         }
+      h3{ 
+            color: white;
+            font-size: 175%;
+            font-family:fantasy;
+            display: center;
+      }
+      </style>
+   </head>
+
+   <body>
+      <h1 align="center" > RU Classroom</h1> 
+      <h3 align="center">Empty classrooms on {{ campus }} at {{ hour }}:{{ minutes }} {{ amOrPm }} on {{ day }}:</h3>
+      <br>
+      <table align="center" style="background-color:white">
+         <tr>
+            <td align = "center"> <b> Building-Room Number </b> </td>
+         </tr>
+         {% for x in list %}
+         <tr>
+            
+            <td><a href="{{x[0]}}">{{x[1]}}</a></td>
+            
+         </tr>
+         {% endfor %} 
+         <!-- <tr> make a for loop here to pring the values of the array </tr>  -->
+         
+      </table>
+
+    </body>
+</html>
